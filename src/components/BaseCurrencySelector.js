@@ -2,7 +2,7 @@ import React from "react";
 import Select from 'react-select';
 import './BaseCurrencySelector.css'
 
-const BaseCurrencySelector = ({rates, base, selectChange}) =>{
+const BaseCurrencySelector = ({rates, selectChange}) =>{
     const baseCurrencies = Object.keys(rates);
     const options = [];
     baseCurrencies.forEach(item =>{

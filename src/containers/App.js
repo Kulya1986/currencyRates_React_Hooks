@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useState, useEffect} from 'react'; 
+import React, {useState, useLayoutEffect} from 'react'; 
 import RatesList from '../components/RateCardsList';
 import BaseCurrencySelector from '../components/BaseCurrencySelector';
 
@@ -10,7 +10,7 @@ function App(){
   const [displayedCurrencies] = useState(['USD','AUD','EUR','UAH','CAD','CHF','PLN','GBP','JPY','CNY']);
 
 
-  useEffect(()=>{
+  useLayoutEffect(()=>{
       const url = `https://exchangerate-api.p.rapidapi.com/rapid/latest/${baseCurrency}`;
       const options = {
           method: 'GET',
@@ -47,7 +47,6 @@ function App(){
             <section> 
               <BaseCurrencySelector 
                 rates={rates}
-                base={baseCurrency}
                 selectChange={onSelectChange}
                 />
             </section>
